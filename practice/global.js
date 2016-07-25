@@ -10,9 +10,7 @@ window.addEventListener("load", function(){
 		});
 
 		request.addEventListener("load", function(hello){
-			var loadHere = document.getElementById("container");
-			
-			loadHere(hello.target.responseText);
+			alert(hello.target.responseText);
 			document.style.cursor = "default";
 		});
 
