@@ -9,8 +9,8 @@ window.addEventListener("load", function(){
 			document.style.cursor = "wait";
 		});
 
-		request.addEventListener("load", function(response){
-			alert("response.target.responseText");
+		request.addEventListener("load", function(dog){
+			alert(dog.target.responseText);
 			document.style.cursor = "default";
 		});
 
