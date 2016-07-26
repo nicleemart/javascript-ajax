@@ -3,7 +3,7 @@ window.addEventListener("load", function(){
 	var submit = document.getElementById("submit");
 
 	submit.addEventListener("click", function(){
-]
+
 		var request = new XMLHttpRequest();
 
 		request.addEventListener("loadstart", function(){
