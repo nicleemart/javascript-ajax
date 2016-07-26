@@ -37,7 +37,7 @@ window.addEventListener("load", function(){
 
 		});
 
-		request.open ("get", "answer.php?answer=" + guess);
+		request.open ("get", "answer.php?answer=" + guess + "&");
 		request.send();
 
 	});
