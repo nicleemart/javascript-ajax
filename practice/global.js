@@ -6,11 +6,13 @@ window.addEventListener("load", function(){
 		var request = new XMLHttpRequest();
 
 		request.addEventListener("loadstart", function(){
-			document.style.cursor = "wait";
+			document.getElementById("myP").style.cursor = "wait";
 		});
 
 		request.addEventListener("load", function(hello){
-			alert(hello.target.responseText);
+			var textHere = document.getElementById("container");
+
+			textHere.innerHTML = hello.target.responseText;
 			document.style.cursor = "default";
 		});
 
