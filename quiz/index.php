@@ -3,14 +3,19 @@
 		<title>Single Page Quiz</title>
 
 		<script type="text/javascript" src="global.js"></script>
+
+		<h2>Quiz</h2>
 	</head>
 
 	<body>
-		<form>
-			<input type="radio" name="one">One<br>
-			<input type="radio" name="two">Two<br>
-			<input type="radio" name="three">Three<br>
-			<input type="submit" value="Submit">
+		Question<br><br>
+		<div>What is the value of 1 + 1 ?</div>
+		<form action="answer.php" method="POST" id="quiz">
+			<input type="radio" name="one-A" value="A">One<br>
+			<input type="radio" name="one-B" value="B">Two<br>
+			<input type="radio" name="one-C" value="C">Three<br>
+			<input type="radio" name="one-D" value="D">Four<br>
+			<input type="submit" value="Submit" id="submit">
 		</form>
 	</body>
 </html>
