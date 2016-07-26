@@ -11,10 +11,10 @@
 		Question<br><br>
 		<div>What is the value of 1 + 1 ?</div>
 		<form action="" method="get" id="quiz">
-			<input type="radio" name="answer" value="A">One<br>
-			<input type="radio" name="answer" value="B">Two<br>
-			<input type="radio" name="answer" value="C">Three<br>
-			<input type="radio" name="answer" value="D">Four<br>
+			<input type="radio" name="answer" value="A" id="one">One<br>
+			<input type="radio" name="answer" value="B" id="two">Two<br>
+			<input type="radio" name="answer" value="C" id="three">Three<br>
+			<input type="radio" name="answer" value="D" id="four">Four<br>
 			<input type="submit" value="Submit" id="submit">
 		</form>
 		<div id="output"></div>
