@@ -3,18 +3,20 @@ window.addEventListener("load", function(){
 	var submit = document.getElementById("submit");
 
 	submit.addEventListener("click", function(){
+]
 		var request = new XMLHttpRequest();
 
 		request.addEventListener("loadstart", function(){
 		});
 
 		request.addEventListener("load", function(results){
-			var textHere = document.getElementById("container");
+			var output = document.getElementById("output");
 
-			textHere.innerHTML = results.target.responseText;
+			output.innerHTML = results.target.responseText;
+
 		});
 
-		request.open ("get", "answer.php");
+		request.open ("get", "answer.php?answer=");
 		request.send();
 
 	});

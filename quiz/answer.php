@@ -1,5 +1,15 @@
 <?php
 
-if ($_GET("choice") == "B")
+if ($_GET["answer"] == "B"){
 
 ?>
+
+Correct
+
+<?php } else {
+
+?>
+
+Incorrect
+
+<?php } ?>
