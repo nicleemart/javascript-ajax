@@ -10,9 +10,9 @@
 
 	<body>
 		<div class="style">
-		<div id= "question1"></div>
+		<div id= "question"></div>
 		<form action="" method="get" id="quiz">
-			<div class="display">
+			<div class="answersRow">
 			<input type="radio" name="answer" value="A"><div id="one"></div>
 			<input type="radio" name="answer" value="B"><div id="two"></div>
 			<input type="radio" name="answer" value="C"><div id="three"></div>

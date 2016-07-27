@@ -7,9 +7,15 @@ window.addEventListener("load", function() {
     var two = document.getElementById("two");
     var three = document.getElementById("three");
     var four = document.getElementById("four");
-    var question = document.getElementById("question1");
+    var question = document.getElementById("question");
+//retrieves first value, A. needs access to 0-3.
+    var answer = document.getElementById("quiz");
+				var txt = "";
+				var i;
+				for (i = 0; i < quiz.length; i++) {
+    			txt = txt + quiz.elements[i].value;
+					}
 
-    var answer = document.getElementById("quiz").elements[0].value;
     var currentQuestionNum = 1;
 
     function json() {
@@ -39,7 +45,7 @@ window.addEventListener("load", function() {
     	four.innerHTML = arr[0].choice4;
     	question.innerHTML = arr[0].questions;
     }
-
+//doesn't work
     one.addEventListener("click", function() {
         answer = one.value;
     });
@@ -75,7 +81,7 @@ window.addEventListener("load", function() {
 
         });
 
-        request.open("get", "answer.php?answer=" + answer + "&question=" + currentQuestionNum);
+        request.open("get", "answer.php?answer=" + txt + "&question=" + currentQuestionNum);
         request.send();
 
     });
