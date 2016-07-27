@@ -30,7 +30,7 @@ window.addEventListener("load", function() {
 
     };
 
-    json(window);
+    json();
 
     function myFunction(arr) {
     	one.innerHTML = arr[0].choice1;
