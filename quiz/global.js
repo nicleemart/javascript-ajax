@@ -8,7 +8,8 @@ window.addEventListener("load", function() {
     var three = document.getElementById("three");
     var four = document.getElementById("four");
     var question = document.getElementById("question");
-//retrieves first value, A. needs access to 0-3.
+
+//retrieves all values within form. want to retrieve one at a time.
     var answer = document.getElementById("quiz");
 				var txt = "";
 				var i;
