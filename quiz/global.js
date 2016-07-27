@@ -3,21 +3,17 @@ window.addEventListener("load", function() {
 
     var submit = document.getElementById("submit");
 
-    var one = document.getElementById("one");
-    var two = document.getElementById("two");
-    var three = document.getElementById("three");
-    var four = document.getElementById("four");
+    var one = document.getElementById("checkOne");
+    var oneDiv = document.getElementById("one");
+    var two = document.getElementById("checkTwo");
+    var twoDiv = document.getElementById("two");
+    var three = document.getElementById("checkThree");
+    var threeDiv = document.getElementById("three");
+    var four = document.getElementById("checkFour");
+    var fourDiv = document.getElementById("four");
     var question = document.getElementById("question");
 
-//retrieves all values within form. want to retrieve one at a time.
-    var answer = document.getElementById("quiz");
-				var txt = "";
-				var i;
-				for (i = 0; i < quiz.length; i++) {
-    			txt = txt + quiz.elements[i].value;
-					}
-
-    var currentQuestionNum = 1;
+    var currentQuestionNum = 0;
 
     function json() {
 
@@ -40,13 +36,13 @@ window.addEventListener("load", function() {
     json();
 
     function myFunction(arr) {
-    	one.innerHTML = arr[0].choice1;
-    	two.innerHTML = arr[0].choice2;
-    	three.innerHTML = arr[0].choice3;
-    	four.innerHTML = arr[0].choice4;
-    	question.innerHTML = arr[0].questions;
+    	oneDiv.innerHTML = arr[currentQuestionNum].choice1;
+    	twoDiv.innerHTML = arr[currentQuestionNum].choice2;
+    	threeDiv.innerHTML = arr[currentQuestionNum].choice3;
+    	fourDiv.innerHTML = arr[currentQuestionNum].choice4;
+    	question.innerHTML = arr[currentQuestionNum].questions;
     }
-//doesn't work
+
     one.addEventListener("click", function() {
         answer = one.value;
     });
@@ -65,7 +61,8 @@ window.addEventListener("load", function() {
 
         var request = new XMLHttpRequest();
 
-        request.addEventListener("loadstart", function() {});
+        request.addEventListener("loadstart", function() {
+        });
 
         request.addEventListener("load", function(results) {
 
@@ -78,11 +75,12 @@ window.addEventListener("load", function() {
             nextQuestion.addEventListener("click", function() {
             	currentQuestionNum++;
             	json();
+                nextQuestion.style.display = "none";
             });
 
         });
 
-        request.open("get", "answer.php?answer=" + txt + "&question=" + currentQuestionNum);
+        request.open("get", "answer.php?answer=" + answer + "&question=" + currentQuestionNum);
         request.send();
 
     });

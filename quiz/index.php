@@ -13,10 +13,10 @@
 		<div id= "question"></div>
 		<form action="" method="get" id="quiz">
 			<div class="answersRow">
-			<input type="radio" name="answer" value="A"><div id="one"></div>
-			<input type="radio" name="answer" value="B"><div id="two"></div>
-			<input type="radio" name="answer" value="C"><div id="three"></div>
-			<input type="radio" name="answer" value="D"><div id="four"></div>
+			<input type="radio" name="answer" value="A" id="checkOne"><div id="one"></div>
+			<input type="radio" name="answer" value="B" id="checkTwo"><div id="two"></div>
+			<input type="radio" name="answer" value="C" id="checkThree"><div id="three"></div>
+			<input type="radio" name="answer" value="D" id="checkFour"><div id="four"></div>
 			</div>
 			<input type="submit" value="Submit" id="submit">
 		</form>

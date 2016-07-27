@@ -1,7 +1,7 @@
 <?php
 
 if ($_GET["answer"] == "B" &&
-	$_GET["question"] == "1")
+	$_GET["question"] == "0")
 {
 
 ?>

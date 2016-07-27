@@ -1,5 +1,5 @@
 [
     {"questions":"Zurg?", "choice1":"dog","choice2":"Buzz Lightyear","choice3":"Woody","choice4":"Wheezy"},
-    {"questions":"Anna?", "choice":"dog","answer":"Smith"},
+    {"questions":"Cat?", "choice1":"dog","choice2":"hotdog", "choice3":"banana", "choice4":"TACOS!"},
     {"questions":"Peter?", "choice":"dog","answer":"Jones"}
 ]
