@@ -9,7 +9,7 @@ window.addEventListener("load", function() {
     var four = document.getElementById("four");
     var question = document.getElementById("question1");
 
-    var answer = "";
+    var answer = document.getElementById("quiz").elements[0].value;
     var currentQuestionNum = 1;
 
     function json() {
@@ -37,7 +37,7 @@ window.addEventListener("load", function() {
     	two.innerHTML = arr[0].choice2;
     	three.innerHTML = arr[0].choice3;
     	four.innerHTML = arr[0].choice4;
-    	question.innerHTML = arr[0].questionz;
+    	question.innerHTML = arr[0].questions;
     }
 
     one.addEventListener("click", function() {
