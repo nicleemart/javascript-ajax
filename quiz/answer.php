@@ -1,6 +1,8 @@
 <?php
 
-if ($_GET["answer"] == "B"){
+if ($_GET["answer"] == "B" &&
+	$_GET["question"] == "1")
+{
 
 ?>
 

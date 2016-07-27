@@ -1,45 +1,83 @@
-window.addEventListener("load", function(){
 
-	var submit = document.getElementById("submit");
+window.addEventListener("load", function() {
 
-	var one = document.getElementById("one");
-	var two = document.getElementById("two");
-	var three = document.getElementById("three");
-	var four = document.getElementById("four");
+    var submit = document.getElementById("submit");
 
-	var guess = "";
+    var one = document.getElementById("one");
+    var two = document.getElementById("two");
+    var three = document.getElementById("three");
+    var four = document.getElementById("four");
+    var question = document.getElementById("question1");
 
-	one.addEventListener("click", function(){
-		guess = one.value;
-	})
-	two.addEventListener("click", function(){
-		guess = two.value;
-	})
-	three.addEventListener("click", function(){
-		guess = three.value;
-	})
-	four.addEventListener("click", function(){
-		guess = four.value;
-	})
+    one.innerHTML = "Razzamafoo";
 
-	submit.addEventListener("click", function(e){
-		e.preventDefault();
+    var answer = "";
+    var currentQuestionNum = 1;
 
-		var request = new XMLHttpRequest();
+    function json() {
 
-		request.addEventListener("loadstart", function(){
-		});
+        var getJson = new XMLHttpRequest();
+        var url = "quiz.txt";
 
-		request.addEventListener("load", function(results){
+        getJson.onreadystatechange = function() {
+            if (getJson.readyState == 4 && getJson.status == 200) {
+                var myArr = JSON.parse(getJson.responseText);
+                myFunction(myArr);
+            }
+        };
 
-			var output = document.getElementById("output");
-			output.innerHTML = results.target.responseText;
 
-		});
+    getJson.open("GET", url, true);
+    getJson.send();
 
-		request.open ("get", "answer.php?answer=" + guess + "&");
-		request.send();
+    };
 
-	});
+    function myFunction(arr) {
+    	one.innerHTML = arr[0].choice1a;
+    	two.innerHTML = arr[0].choice2a;
+    	three.innerHTML = arr[0].choice3a;
+    	four.innerHTML = arr[0].choice4a;
+    	question.innerHTML = arr[0].questionz;
+    }
+
+    one.addEventListener("click", function() {
+        answer = one.value;
+    });
+    two.addEventListener("click", function() {
+        answer = two.value;
+    });
+    three.addEventListener("click", function() {
+        answer = three.value;
+    });
+    four.addEventListener("click", function() {
+        answer = four.value;
+    });
+
+    submit.addEventListener("click", function(form) {
+        form.preventDefault();
+
+        var request = new XMLHttpRequest();
+
+        request.addEventListener("loadstart", function() {});
+
+        request.addEventListener("load", function(results) {
+
+            var output = document.getElementById("output");
+            output.innerHTML = results.target.responseText;
+
+            var nextQuestion = document.getElementById("next");
+            nextQuestion.style.display = "block";
+
+            nextQuestion.addEventListener("click", function() {
+            	currentQuestionNum++;
+            	json();
+            });
+
+        });
+
+        request.open("get", "answer.php?answer=" + answer + "&question=" + currentQuestionNum);
+        request.send();
+
+    });
 
 });
