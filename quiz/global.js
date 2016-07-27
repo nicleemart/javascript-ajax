@@ -9,8 +9,6 @@ window.addEventListener("load", function() {
     var four = document.getElementById("four");
     var question = document.getElementById("question1");
 
-    one.innerHTML = "Razzamafoo";
-
     var answer = "";
     var currentQuestionNum = 1;
 
@@ -33,10 +31,10 @@ window.addEventListener("load", function() {
     };
 
     function myFunction(arr) {
-    	one.innerHTML = arr[0].choice1a;
-    	two.innerHTML = arr[0].choice2a;
-    	three.innerHTML = arr[0].choice3a;
-    	four.innerHTML = arr[0].choice4a;
+    	one.innerHTML = arr[0].choice1;
+    	two.innerHTML = arr[0].choice2;
+    	three.innerHTML = arr[0].choice3;
+    	four.innerHTML = arr[0].choice4;
     	question.innerHTML = arr[0].questionz;
     }
 

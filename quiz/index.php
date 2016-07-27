@@ -12,9 +12,9 @@
 		<div id= "question1"></div>
 		<form action="" method="get" id="quiz">
 			<input type="radio" name="answer" value="A"><div id="one"></div><br>
-			<input type="radio" name="answer" value="B" id="two"><br>
-			<input type="radio" name="answer" value="C" id="three"><br>
-			<input type="radio" name="answer" value="D" id="four"><br>
+			<input type="radio" name="answer" value="B"><div id="two"></div><br>
+			<input type="radio" name="answer" value="C"><div id="three"></div><br>
+			<input type="radio" name="answer" value="D"><div id="four"></div><br>
 			<input type="submit" value="Submit" id="submit">
 		</form>
 		<div id="output"></div>
