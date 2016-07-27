@@ -30,6 +30,8 @@ window.addEventListener("load", function() {
 
     };
 
+    json(window);
+
     function myFunction(arr) {
     	one.innerHTML = arr[0].choice1;
     	two.innerHTML = arr[0].choice2;
