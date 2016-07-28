@@ -12,24 +12,26 @@ window.addEventListener("load", function() {
     var four = document.getElementById("checkFour");
     var fourDiv = document.getElementById("four");
     var question = document.getElementById("question");
+    var nextQuestion = document.getElementById("next");
+    var output = document.getElementById("output");
 
     var currentQuestionNum = -1;
 
     function json() {
 
         var getJson = new XMLHttpRequest();
-        var url = "quiz.txt";
 
         getJson.onreadystatechange = function() {
             if (getJson.readyState == 4 && getJson.status == 200) {
                 var myArr = JSON.parse(getJson.responseText);
+                console.log("INCREMENTING currentQuestionNum");
                 currentQuestionNum += 1;
                 myFunction(myArr);
             }
         };
 
 
-    getJson.open("GET", url, true);
+    getJson.open("GET", "quiz.txt", true);
     getJson.send();
 
     };
@@ -37,11 +39,25 @@ window.addEventListener("load", function() {
     json();
 
     function myFunction(arr) {
-    	oneDiv.innerHTML = arr[currentQuestionNum].choice1;
-    	twoDiv.innerHTML = arr[currentQuestionNum].choice2;
-    	threeDiv.innerHTML = arr[currentQuestionNum].choice3;
-    	fourDiv.innerHTML = arr[currentQuestionNum].choice4;
-    	question.innerHTML = arr[currentQuestionNum].questions;
+    if (currentQuestionNum < arr.length){
+        oneDiv.innerHTML = arr[currentQuestionNum].choice1;
+        twoDiv.innerHTML = arr[currentQuestionNum].choice2;
+        threeDiv.innerHTML = arr[currentQuestionNum].choice3;
+        fourDiv.innerHTML = arr[currentQuestionNum].choice4;
+        question.innerHTML = arr[currentQuestionNum].questions;
+        }
+    else {
+        question.innerHTML = "Complete";
+        oneDiv.style.display = "none";
+        twoDiv.style.display = "none";
+        threeDiv.style.display = "none";
+        fourDiv.style.display = "none";
+        submit.style.display = "none";
+        one.style.display = "none";
+        two.style.display = "none";
+        three.style.display = "none";
+        four.style.display = "none";
+    }
     }
 
     one.addEventListener("click", function() {
@@ -67,24 +83,24 @@ window.addEventListener("load", function() {
 
         request.addEventListener("load", function(results) {
 
-            var output = document.getElementById("output");
+            
             output.innerHTML = results.target.responseText;
-            output.style.display ="block";
+            output.style.display = "block";
 
-            var nextQuestion = document.getElementById("next");
+            
             nextQuestion.style.display = "block";
-
-            nextQuestion.addEventListener("click", function() {
-            	json();
-                output.style.display = "none";
-                nextQuestion.style.display = "none";
-            });
 
         });
 
         request.open("get", "answer.php?answer=" + answer + "&question=" + currentQuestionNum);
         request.send();
 
+    });
+
+    nextQuestion.addEventListener("click", function() {
+        json();
+        output.style.display = "none";
+        nextQuestion.style.display = "none";
     });
 
 });
