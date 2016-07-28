@@ -21,7 +21,7 @@
 			<input type="submit" value="Submit" id="submit">
 		</form>
 		</div>
-		<div id="output"></div>
+		<div id="output" style="display:none"></div>
 		<button id ="next" style="display:none">Next Question</button>
 	</body>
 </html>

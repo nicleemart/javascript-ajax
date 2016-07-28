@@ -1,5 +1,5 @@
 [
-    {"questions":"Zurg?", "choice1":"dog","choice2":"Buzz Lightyear","choice3":"Woody","choice4":"Wheezy"},
-    {"questions":"Cat?", "choice1":"dog","choice2":"hotdog", "choice3":"banana", "choice4":"TACOS!"},
-    {"questions":"Peter?", "choice":"dog","answer":"Jones"}
+    {"questions":"Which of these is not a Koopaling?", "choice1":"Iggy","choice2":"Pikachu","choice3":"Lemmy","choice4":"Wendy"},
+    {"questions":"Which of these is not a power up Mario uses?", "choice1":"Mushroom","choice2":"Tanooki", "choice3":"Fire Flower", "choice4":"Wombat"},
+    {"questions":"Who is Mario's brother?", "choice1":"Luigi","choice2":"Joe","choice3":"Slippery Pete","choice4":"Roy"}
 ]

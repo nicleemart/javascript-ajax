@@ -13,7 +13,7 @@ window.addEventListener("load", function() {
     var fourDiv = document.getElementById("four");
     var question = document.getElementById("question");
 
-    var currentQuestionNum = 0;
+    var currentQuestionNum = -1;
 
     function json() {
 
@@ -23,6 +23,7 @@ window.addEventListener("load", function() {
         getJson.onreadystatechange = function() {
             if (getJson.readyState == 4 && getJson.status == 200) {
                 var myArr = JSON.parse(getJson.responseText);
+                currentQuestionNum += 1;
                 myFunction(myArr);
             }
         };
@@ -68,13 +69,14 @@ window.addEventListener("load", function() {
 
             var output = document.getElementById("output");
             output.innerHTML = results.target.responseText;
+            output.style.display ="block";
 
             var nextQuestion = document.getElementById("next");
             nextQuestion.style.display = "block";
 
             nextQuestion.addEventListener("click", function() {
-            	currentQuestionNum++;
             	json();
+                output.style.display = "none";
                 nextQuestion.style.display = "none";
             });
 
